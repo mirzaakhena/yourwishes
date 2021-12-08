@@ -1,0 +1,10 @@
+POST http://localhost:8081/wishes
+
+{
+  "message": "i want to be a presiden"
+}
+
+
+###
+
+GET http://localhost:8081/wishes
