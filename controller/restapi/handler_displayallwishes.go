@@ -30,6 +30,11 @@ func (r *Controller) displayAllWishesHandler(inputPort displayallwishes.Inport) 
 		ctx := log.Context(c.Request.Context(), traceID)
 
 		var req displayallwishes.InportRequest
+		//if err := c.BindJSON(&req); err != nil {
+		//	log.Error(ctx, err.Error())
+		//	c.JSON(http.StatusBadRequest, NewErrorResponse(err, traceID))
+		//	return
+		//}
 
 		log.Info(ctx, util.MustJSON(req))
 

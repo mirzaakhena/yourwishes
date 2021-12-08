@@ -269,7 +269,7 @@ $ go mod tidy
 		...
 ```
 
-10. Modify Controller for `DisplayAllWishes`
+10. Modify Controller for `DisplayAllWishes`. Remember to remove the bindJson part since we don't have the request input 
 ```
 
 	type Wishes struct {
@@ -281,6 +281,17 @@ $ go mod tidy
 	type response struct {
 		AllWishes []Wishes `json:"all_wishes"`
 	}
+	
+        ...
+        ...
+        ...	
+	
+		var req displayallwishes.InportRequest
+		//if err := c.BindJSON(&req); err != nil {
+		//	log.Error(ctx, err.Error())
+		//	c.JSON(http.StatusBadRequest, NewErrorResponse(err, traceID))
+		//	return
+		//}	
 
         ...
         ...
